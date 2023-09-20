@@ -30,18 +30,17 @@ func main() {
 		} else {
 			fmt.Println()
 		}
-
 	}
 }
 
 // parsePatternArgument parses the regex pattern from the command line arguments
 func parsePatternArgument() string {
 	if len(os.Args) > 2 {
-		os.Stderr.WriteString("too many arguments")
+		_, _ = fmt.Fprintf(os.Stderr, "too many arguments")
 		os.Exit(1)
 	}
 	if len(os.Args) < 2 {
-		os.Stderr.WriteString("missing pattern")
+		_, _ = fmt.Fprintf(os.Stderr, "missing pattern")
 		os.Exit(1)
 	}
 	return os.Args[1]
