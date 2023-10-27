@@ -49,11 +49,7 @@ func main() {
 // parsePatternArgument parses the regex pattern from the command line arguments
 func parsePatternArgument(args []string) string {
 	if len(args) > 1 {
-		_, _ = fmt.Fprintf(os.Stderr, "too many arguments")
-		for _, arg := range args {
-			_, _ = fmt.Fprintf(os.Stderr, "\n")
-			_, _ = fmt.Fprintf(os.Stderr, arg)
-		}
+		_, _ = fmt.Fprintf(os.Stderr, "too many arguments (flags must come befoer pattern)")
 		os.Exit(1)
 	}
 	if len(args) < 1 {
