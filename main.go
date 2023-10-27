@@ -24,6 +24,10 @@ func main() {
 	rex := regexp.MustCompile(pattern)
 	for {
 		line, readErr := reader.ReadString('\n')
+		if readErr != io.EOF {
+			//trim newline from end of line
+			line = line[0 : len(line)-1]
+		}
 		captures := rex.FindStringSubmatch(line)
 		if len(captures) == 0 {
 			// skip line if not matched
