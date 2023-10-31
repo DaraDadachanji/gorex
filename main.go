@@ -17,7 +17,6 @@ func main() {
 		"delimiter for outputs if multiple capture groups are specified",
 	)
 	flag.Parse()
-	fmt.Println(*delimiter)
 
 	reader := bufio.NewReader(os.Stdin)
 	pattern := parsePatternArgument(flag.Args())
