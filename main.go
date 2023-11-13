@@ -12,9 +12,9 @@ import (
 
 func main() {
 	delimiter := flag.String(
-		"d",
+		"F",
 		" ",
-		"delimiter for outputs if multiple capture groups are specified",
+		"Field separator for outputs if multiple capture groups are specified",
 	)
 	flag.Parse()
 
