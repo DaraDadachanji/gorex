@@ -1,3 +1,3 @@
-module gorex
+module rex
 
 go 1.19
